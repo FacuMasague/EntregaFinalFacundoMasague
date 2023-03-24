@@ -61,7 +61,6 @@ header h1{
     border-top-left-radius: 1rem;
     height: 90vh;
 }
-
 #sec_carrito div h2{
     text-align: center;
     text-decoration: underline;
@@ -69,11 +68,9 @@ header h1{
     font-size: 2rem;
     color: white;
 }
-
 #sec_carrito div ul{
     list-style: none;
 }
-
 #sec_carrito div ul li{
     color: white;
 }
@@ -152,7 +149,6 @@ ul li{
     justify-content: center;
     align-items: center;
 }
-
 .precio_total h3{
     color: white;
     font-size: 2rem;
