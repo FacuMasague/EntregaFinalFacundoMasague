@@ -13,10 +13,10 @@ header{
     width: 100vw;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid greenyellow;
+    border-bottom: 3px solid greenyellow;
     position: fixed;
     background-color: rgba(26, 26, 26, 0.6);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     z-index: 9999;
 }
 header h1{
