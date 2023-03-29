@@ -98,15 +98,29 @@ ul li{
     height: 300px;
     width: 250px;
     border: 3px solid greenyellow;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    transition: .3s;
 }
 .listaProductos li:hover{
-    transition: 0.25s;
+    transition: .3s;
     height: 320px;
     width: 260px;
-    background-color: rgba(153, 255, 0, 0.05);
+    background: linear-gradient(to top right, #1a1a1a, #333333, #4d4d4d);
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+}
+@keyframes gradient {
+    0% {
+      background-position: 0% 100%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
 }
 
 .info{
