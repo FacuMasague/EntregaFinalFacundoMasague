@@ -1,0 +1,6 @@
+[
+    {"producto": "desarrolloWeb", "precio": 15000, "nombre": "Desarrollo Web"},
+    {"producto": "javascript", "precio": 20000, "nombre": "Javascript"},
+    {"producto": "reactJS", "precio": 22500, "nombre": "ReactJS"},
+    {"producto": "backend", "precio": 25000, "nombre": "BackEnd"}
+]

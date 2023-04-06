@@ -1,37 +1,45 @@
-const productos = [
-    {producto: "desarrolloWeb", precio: 15000, nombre: "Desarrollo Web"},
-    {producto: "javascript", precio: 20000, nombre: "Javascript"},
-    {producto: "reactJS", precio: 22500, nombre: "ReactJS"},
-    {producto: "backend", precio: 25000, nombre: "BackEnd"}
-];
+let productos
+
+let productosjson = fetch("productos.json")
+    .then(function(response){return response.json()})
+    .then(function(data){return productos = data})
 
 let precio = 0
+let i = 0
 
 let carrito = []
-let carrito_json = JSON.stringify(carrito)
-
-let cart = document.getElementById("carrito")
+let carritoHTML = document.getElementById("carrito")
 
 let total = document.getElementById("total")
 total.innerText = precio + "$"
 
-let buttons = document.querySelectorAll("button")
+let buttons = document.querySelectorAll(".button_compra")
 
-buttons.forEach(function(button) {
-    button.addEventListener("click", function() {
-        let id = button.parentNode.parentNode.id
-        let suma = productos.find(function(item) {
-            return item.producto === id
+buttons.forEach(function(button){
+    button.addEventListener("click", function(){
+        let producto = productos.find(function(item){
+            return item.producto === button.parentNode.parentNode.id
         })
-        precio += suma.precio
+        Toastify({
+            text: producto.nombre + " añadido",
+            className: "alerta",
+            duration: 3000
+        }) .showToast();
 
+        precio += producto.precio
         total.innerText = precio + "$"
-
-        carrito.push(id)
-        sessionStorage.setItem("Carrito", carrito)
+        
+        i++
+        let carritoProducto = {
+            producto: producto.nombre,
+            id: i
+        }
+        carrito.push(carritoProducto)
+        console.log(carrito)
 
         let li = document.createElement("li")
-        li.innerText = suma.nombre
-        cart.appendChild(li)
+        li.setAttribute("id", i)
+        li.innerText = carrito[carrito.length - 1].producto
+        carritoHTML.appendChild(li)
     })
 })
